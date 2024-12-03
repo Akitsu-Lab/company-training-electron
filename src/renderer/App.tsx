@@ -1,40 +1,29 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
 import './App.css';
+
+type Employee = {
+  id: number;
+  name: string;
+  age: number;
+};
+
+const employees: Employee[] = [
+  { id: 1, name: 'sota', age: 27 },
+  { id: 2, name: 'keita', age: 27 },
+];
 
 function Hello() {
   return (
     <div>
-      <div className="Hello">
-        <img width="200" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="folded hands">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
-      </div>
+      <h1>社員一覧</h1>
+      <ul style={{ listStyleType: 'none', padding: 0 }}>
+        {employees.map((employee) => (
+          <li key={employee.id}>
+            <h3>{employee.name}</h3>
+            <h3>{employee.age}</h3>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
