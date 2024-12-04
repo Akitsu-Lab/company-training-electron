@@ -4,14 +4,24 @@ export default function EmployeeList() {
   return (
     <div>
       <h1>社員一覧</h1>
-      <ul style={{ listStyleType: 'none', padding: 0 }}>
-        {employees.map((employee) => (
-          <li key={employee.id}>
-            <h3>{employee.name}</h3>
-            <h3>{employee.age}</h3>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thread>
+          <tr>
+            <th>ID</th>
+            <th>名前</th>
+            <th>年齢</th>
+          </tr>
+        </thread>
+        <tbody>
+          {employees.map((employee) => (
+            <tr>
+              <td>{employee.id}</td>
+              <td>{employee.name}</td>
+              <td>{employee.age}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
