@@ -5,13 +5,13 @@ export default function EmployeeList() {
     <div>
       <h1>社員一覧</h1>
       <table>
-        <thread>
+        <thead>
           <tr>
             <th>ID</th>
             <th>名前</th>
             <th>年齢</th>
           </tr>
-        </thread>
+        </thead>
         <tbody>
           {employees.map((employee) => (
             <tr>
